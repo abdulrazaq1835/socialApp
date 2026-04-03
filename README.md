@@ -5,6 +5,7 @@ A mini social media application where users can create accounts, post text or im
 ## Features
 
 - User Authentication (Signup / Login)
+- jwt auth
 - Create Posts (Text + Image)
 - Public Feed
 - Like / Unlike Posts
@@ -42,8 +43,8 @@ npm run dev
 ### Environment Variables
 
 **Backend `.env`:PORT=5001
-MONGO_URL=mongodb+srv://abdulrazzak1835_db_user:lR8TJCpAvf0jd3bI@cluster0.8qyld6b.mongodb.net/?appName=Cluster0
-JWT_SECRET=akdnswlkfdnb
+MONGO_URL=""
+JWT_SECRET=""
 CLOUDINARY_CLOUD_NAME=daqdnenup
-CLOUDINARY_API_KEY=921722777435372
-CLOUDINARY_API_SECRET=VfMtR_0Lf-b1076tIv-2gRAPxTk
+CLOUDINARY_API_KEY=""
+CLOUDINARY_API_SECRET=""
