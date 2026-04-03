@@ -9,6 +9,7 @@ A mini social media application where users can create accounts, post text or im
 - Public Feed
 - Like / Unlike Posts
 - Comment on Posts
+- state manage by ContextApi
 
 ## Tech Stack
 

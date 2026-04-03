@@ -29,7 +29,7 @@ const Feed = () => {
       position: "relative",
       overflow: "hidden"
     }}>
-      {/* Decorative background blobs */}
+    
       <Box sx={{
         position: 'absolute', top: '-10%', left: '-5%', width: '300px', height: '300px',
         bgcolor: 'rgba(255, 107, 107, 0.1)', borderRadius: '50%', filter: 'blur(60px)', zIndex: 0
