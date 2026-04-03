@@ -41,7 +41,7 @@ npm run dev
 ### Environment Variables
 
 **Backend `.env`:PORT=5001
-MONGO_URL=mongodb+srv://abdulrazzak1835_db_user:lR8TJCpAvf0jd3bI@cluster0.8qyld6b.mongodb.net/?appName=Cluster0
+MONGO_URL=""
 JWT_SECRET=akdnswlkfdnb
 CLOUDINARY_CLOUD_NAME=daqdnenup
 CLOUDINARY_API_KEY=921722777435372
