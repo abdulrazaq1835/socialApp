@@ -9,28 +9,31 @@ import cors from 'cors'
 dotenv.config();
 connectDB();
 
-
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+app.options('*', cors());
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://social-app-hg1m.vercel.app"
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://social-app-s863.vercel.app"
-    ],
-    credentials: true,
-  })
-)
+
 app.get("/", (req, res) => {
   res.send("API is running.");
-
 });
 
 app.use("/api/auth", authRoutes);
-app.use("/api/posts", postRoutes)
+app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}` );
+  console.log(`Server running on port ${PORT}`);
 });
