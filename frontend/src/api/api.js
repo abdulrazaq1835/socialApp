@@ -39,3 +39,8 @@ export const addComment = async (postId, text) => {
   const res = await axios.post(`/comments/${postId}`, { text })
   return res.data
 }
+
+export const deletePost = async (postId) => {
+  const res = await axios.delete(`/posts/${postId}`)
+  return res.data
+}

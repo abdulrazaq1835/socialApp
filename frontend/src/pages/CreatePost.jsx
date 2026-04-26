@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { createPost } from "../api/api.js"
 import { useNavigate } from "react-router-dom"
+import toast from "react-hot-toast"
 import {
   Box,
   Button,
@@ -30,15 +31,24 @@ const CreatePostPage = () => {
   }
 
   const handleSubmit = async () => {
-    if (!content && !image) return
+    if (!content && !image) {
+      toast.error("Please add content or an image")
+      return
+    }
     setLoading(true)
-    const formData = new FormData()
-    if (title) formData.append("title", title)
-    if (content) formData.append("content", content)
-    if (image) formData.append("image", image)
-    await createPost(formData)
-    setLoading(false)
-    navigate("/feed")
+    try {
+      const formData = new FormData()
+      if (title) formData.append("title", title)
+      if (content) formData.append("content", content)
+      if (image) formData.append("image", image)
+      await createPost(formData)
+      toast.success("Post created successfully!")
+      navigate("/feed")
+    } catch (error) {
+      toast.error("Failed to create post")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (

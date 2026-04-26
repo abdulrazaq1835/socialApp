@@ -8,7 +8,10 @@ import {
   Typography,
   Paper,
   CircularProgress,
+  InputAdornment,
+  IconButton,
 } from "@mui/material"
+import { Visibility, VisibilityOff } from "@mui/icons-material"
 
 const Register = () => {
   const { register } = useAuth()
@@ -20,6 +23,11 @@ const Register = () => {
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
+  const [showPassword, setShowPassword] = useState(false)
+
+  const handleClickShowPassword = () => {
+    setShowPassword((prev) => !prev)
+  }
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -101,11 +109,24 @@ const Register = () => {
             fullWidth
             label="Password"
             name="password"
-            type="password"
+            type={showPassword ? "text" : "password"}
             value={form.password}
             onChange={handleChange}
             margin="normal"
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
           />
 
           <Button

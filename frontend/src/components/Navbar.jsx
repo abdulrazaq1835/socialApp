@@ -39,7 +39,7 @@ const Navbar = () => {
         
         <Box display="flex" alignItems="center" gap={{ xs: 1, sm: 2 }}>
           {user && (
-            <Box display={{ xs: 'none', sm: 'flex' }} alignItems="center" gap={1} sx={{
+            <Box display="flex" alignItems="center" gap={1} sx={{
               px: 2, py: 0.5, bgcolor: 'rgba(78, 205, 196, 0.1)', borderRadius: '20px', border: '1px solid rgba(78, 205, 196, 0.2)'
             }}>
                <Avatar sx={{ width: 24, height: 24, bgcolor: '#4ECDC4', fontSize: '0.9rem' }}>
