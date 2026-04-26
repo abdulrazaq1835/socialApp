@@ -22,7 +22,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.options('*', cors()); // ← yeh line add ki hai
+app.options('/{*path}', cors());
 
 app.use(express.json());
 
